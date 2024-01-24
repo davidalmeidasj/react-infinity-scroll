@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
+import './Loading.scss';
 
-const Loading: React.FC = () => {
-    return <div>Loading...</div>;
+interface LoadingProps {
+    children: ReactNode;
+    active: Boolean;
+}
+
+const Loading = ({ children, active }: LoadingProps) => {
+    return active ? <div className="loading-dot"/> : children;
 };
 
 export default Loading;

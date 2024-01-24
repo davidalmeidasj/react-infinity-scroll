@@ -1,0 +1,32 @@
+@import "src/styles/colors";
+@mixin text-stroke($width, $color) {
+  -webkit-text-stroke: $width $color;
+  text-stroke: $width $color;
+}
+
+.logoEffect {
+  font-family: 'Arial', sans-serif;
+  font-size: 55px;
+  font-weight: bold;
+  color: $blue;
+  text-transform: uppercase;
+  position: relative;
+
+  @include text-stroke(1px, $blue);
+
+  background: linear-gradient(to bottom, $blue 0%, $yellow 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 2px 2px $yellow;
+
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: -1;
+    color: $yellow;
+    @include text-stroke(8px, $blue);
+  }
+}

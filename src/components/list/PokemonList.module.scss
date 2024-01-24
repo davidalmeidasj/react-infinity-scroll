@@ -1,0 +1,43 @@
+@import "src/styles/colors";
+$white: #FFFFFF;
+$borderWidth: 8px; // Thickness of the border
+$borderWidth: 4px; // You can adjust the border width
+
+// Container for the entire component, including title and list
+.pokemonListContainer {
+  text-align: center; // Center-align the content
+  padding: 20px;
+  margin: auto; // Center the container in the page
+  width: 300px; // Width of the container, adjust as needed
+
+  // Style for the title
+  .pokemonTitle {
+    margin-bottom: 20px; // Space between title and list
+    // Add more styles for the title if needed
+  }
+
+  // Style for the list and its border
+  .pokemonList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none; // Remove bullet points
+    margin: 0;
+    border-top: $borderWidth solid $yellow; // Top half of the border is yellow
+    border-bottom: $borderWidth solid $red; // Bottom half of the border is red
+    border-left: $borderWidth solid $yellow; // Left border is yellow
+    border-right: $borderWidth solid $red; // Right border is red
+    padding: 15px; // Inner spacing
+    background-color: $black;
+    max-height: 300px;
+    overflow: auto;
+
+    a {
+      margin-bottom: 5px; // Space between list items
+      color: $white;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

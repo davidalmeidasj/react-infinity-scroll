@@ -1,0 +1,28 @@
+@import "src/styles/colors";
+.loading-dot {
+  &:after {
+    content: '';
+    animation: dot 1.0s infinite;
+  }
+}
+
+.loading-dot {
+  display: inline-block;
+  font-size: 35px;
+  color: black;
+}
+
+@keyframes dot {
+  0%, 20% {
+    content: '.';
+    color: blue;
+  }
+  40%, 60% {
+    content: '..';
+    color: yellow;
+  }
+  80%, 100% {
+    content: '...';
+    color: red;
+  }
+}
